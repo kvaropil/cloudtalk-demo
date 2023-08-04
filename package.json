@@ -1,0 +1,21 @@
+{
+  "name": "cloudtalk-demo",
+  "version": "1.0.0",
+  "description": "Interview demo",
+  "main": "index.js",
+  "repository": "https://github.com/kvaropil/cloudtalk-demo",
+  "author": "Roman Kvapil",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "cypress": "^12.17.3",
+    "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "cy:run": "cypress run",
+    "cy:open": "cypress open"
+  },
+  "devDependencies": {
+    "@cypress/grep": "^3.1.5"
+  }
+}
