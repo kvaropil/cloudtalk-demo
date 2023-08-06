@@ -1,4 +1,4 @@
-import { SELECTORS } from '../support/todoMvcSelectors';
+import selectors from '../support/selectors/todoMvcSelectors';
 import { ITodoData } from '../types/todoData';
 
 describe('TodoMVC', { tags: '@todoMvc' }, (): void => {
@@ -22,7 +22,7 @@ describe('TodoMVC', { tags: '@todoMvc' }, (): void => {
 
   it('TC 1002 - User can toggle todos', (): void => {
     cy.toggleTodo(0);
-    cy.get(SELECTORS.todoListItem).eq(0).should('have.class', 'completed');
-    cy.get(SELECTORS.todoListItem).eq(1).should('not.have.class', 'completed');
+    cy.get(selectors.todoListItem).eq(0).should('have.class', 'completed');
+    cy.get(selectors.todoListItem).eq(1).should('not.have.class', 'completed');
   });
 });
