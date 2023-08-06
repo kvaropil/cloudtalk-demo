@@ -1,7 +1,7 @@
 import { SELECTORS } from '../support/todoMvcSelectors';
 import { ITodoData } from '../types/todoData';
 
-describe('TodoMVC', (): void => {
+describe('TodoMVC', { tags: '@todoMvc' }, (): void => {
   let todoData: ITodoData;
 
   beforeEach((): void => {
