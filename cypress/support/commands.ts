@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import { SELECTORS } from './todoMvcSelectors';
+import todoMvcSelectors from './selectors/todoMvcSelectors';
 
 /**
  * @description Assert todo item in list by given index and text
@@ -10,7 +10,7 @@ import { SELECTORS } from './todoMvcSelectors';
 Cypress.Commands.add(
   'assertTodoText',
   (index: number, expectedTodoText: string) => {
-    cy.get(SELECTORS.todoListItem)
+    cy.get(todoMvcSelectors.todoListItem)
       .eq(index)
       .should('contain.text', expectedTodoText);
   },
@@ -22,7 +22,7 @@ Cypress.Commands.add(
  * @returns {void}
  */
 Cypress.Commands.add('createTodo', (todoText: string) => {
-  cy.get(SELECTORS.newTodoInput).type(`${todoText}{enter}`);
+  cy.get(todoMvcSelectors.newTodoInput).type(`${todoText}{enter}`);
 });
 
 /**
@@ -31,7 +31,10 @@ Cypress.Commands.add('createTodo', (todoText: string) => {
  * @returns {void}
  */
 Cypress.Commands.add('toggleTodo', (index: number) => {
-  cy.get(SELECTORS.todoListItem).eq(index).find(SELECTORS.todoToggle).check();
+  cy.get(todoMvcSelectors.todoListItem)
+    .eq(index)
+    .find(todoMvcSelectors.todoToggle)
+    .check();
 });
 
 export {};
