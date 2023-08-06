@@ -18,6 +18,8 @@ describe('TodoMVC', { tags: '@todoMvc' }, (): void => {
   it('TC 1001 - User can add todos', (): void => {
     cy.assertTodoText(0, todoData.TODO_ITEM_ONE);
     cy.assertTodoText(1, todoData.TODO_ITEM_TWO);
+
+    cy.get(selectors.todoListItem).should('have.length', 2);
   });
 
   it('TC 1002 - User can toggle todos', (): void => {
