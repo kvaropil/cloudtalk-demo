@@ -15,7 +15,7 @@ describe('TodoMVC', { tags: '@todoMvc' }, (): void => {
     });
   });
 
-  it('TC 1001 - Use can add todos', (): void => {
+  it('TC 1001 - User can add todos', (): void => {
     cy.assertTodoText(0, todoData.TODO_ITEM_ONE);
     cy.assertTodoText(1, todoData.TODO_ITEM_TWO);
   });
